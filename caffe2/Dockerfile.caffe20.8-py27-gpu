@@ -1,0 +1,28 @@
+FROM tinymind/base:py27-gpu
+LABEL author="TinyMind" website="www.tinymind.com" email="hello@tinymind.com"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        cmake \
+        libgflags-dev \
+        libgoogle-glog-dev \
+        libgtest-dev \
+        libiomp-dev \
+        liblmdb-dev \
+        libopencv-dev \
+        libopenmpi-dev \
+        libprotobuf-dev \
+        libsnappy-dev \
+        openmpi-bin \
+        protobuf-compiler \
+        python-pydot \
+        && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pip install protobuf pydot python-nvd3 requests hypothesis scikit-image future
+
+RUN git clone --recursive https://github.com/caffe2/caffe2.git && \
+    cd caffe2 && git checkout v0.8.0 && make && cd build && make install
+
+ENV PYTHONPATH=/usr/local:$PYTHONPATH:/caffe2/build
+ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH

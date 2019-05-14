@@ -1,0 +1,31 @@
+[{
+  "name": "fake_data",
+  "type": "bool",
+  "desc": "If true, uses fake data for unit testing",
+  "value": false
+}, {
+  "name": "max_steps",
+  "type": "int",
+  "desc": "Number of steps to run trainer",
+  "value": 10000
+}, {
+  "name": "learning_rate",
+  "type": "float",
+  "desc": "Initial learning rate",
+  "value": 0.001
+}, {
+  "name": "dropout",
+  "type": "float",
+  "desc": "Keep probability for training dropout",
+  "value": 0.9
+}, {
+  "name": "data_dir",
+  "type": "string",
+  "desc": "Directory for storing input data",
+  "value": "/tmp/tensorflow/mnist/input_data"
+}, {
+  "name": "log_dir",
+  "type": "string",
+  "desc": "Directory for storing summary logs",
+  "value": "/tmp/tensorflow/mnist/logs"
+}]
