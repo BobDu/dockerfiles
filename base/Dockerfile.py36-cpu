@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 LABEL author="TinyMind" website="www.tinymind.com" email="hello@tinymind.com"
 
-RUN apt update && apt install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         cmake \
         curl \
@@ -44,16 +44,9 @@ RUN apt update && apt install -y --no-install-recommends \
     apt clean && \
     rm -rf /var/lib/apt/lists/* && \
     ln -sf /usr/bin/python3 /usr/bin/python && \
-    wget https://bootstrap.pypa.io/get-pip.py && \
+    wget -q https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     rm get-pip.py
-
-# MKL support.
-RUN git clone --depth=1 https://github.com/intel/mkl-dnn.git && \
-    cd mkl-dnn/scripts && ./prepare_mkl.sh && cd .. && \
-    mkdir -p build && cd build && cmake .. && make && \
-    make install
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 # Core dependencies.
 RUN pip --no-cache-dir install --upgrade \
