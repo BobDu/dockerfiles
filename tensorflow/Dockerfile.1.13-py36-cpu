@@ -1,0 +1,7 @@
+FROM tinymind/base:py36-cpu
+LABEL author="TinyMind" website="www.tinymind.com" email="hello@tinymind.com"
+
+RUN pip --no-cache-dir install https://github.com/mind/wheels/releases/download/tf1.13-cpu-mkl/tensorflow-1.13.1-cp36-cp36m-linux_x86_64.whl
+
+# TensorBoard
+EXPOSE 6006
