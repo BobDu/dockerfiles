@@ -46,3 +46,23 @@ python keras.py --nonb --langs py27 py36
 cd /tmp/tmbuild/
 sh build.sh
 ```
+
+## Pre install python package
+
+```
+RUN pip --no-cache-dir install --upgrade \
+        Pillow \
+        h5py \
+        jupyter \
+        keras_applications \
+        keras_preprocessing \
+        matplotlib \
+        numpy \
+        scipy \
+        scikit-learn \
+        pandas \
+        mkl \
+        pyyaml \
+        Cython \
+        tinyenv
+```
