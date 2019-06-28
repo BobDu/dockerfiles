@@ -64,5 +64,6 @@ RUN pip --no-cache-dir install --upgrade \
         mkl \
         pyyaml \
         Cython \
+        opencv-python \
         tinyenv
 ```
