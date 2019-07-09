@@ -3,7 +3,7 @@ import argparse
 
 
 VERSIONS = ['0.12', '1.0', '1.1', '1.2', '1.3', '1.4']
-LANGS = ['py36']
+LANGS = ['py36', 'py37']
 ARCHS = ['cpu', 'gpu']
 
 VMAP = {

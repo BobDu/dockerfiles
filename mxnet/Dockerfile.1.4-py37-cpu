@@ -1,4 +1,4 @@
-FROM tinymind/base:py36-cpu
+FROM tinymind/base:py37-cpu
 LABEL author="TinyMind" website="www.tinymind.com" email="hello@tinymind.com"
 
 RUN pip install mxnet==1.4.1 &&     rm -rf ~/.cache/pip
