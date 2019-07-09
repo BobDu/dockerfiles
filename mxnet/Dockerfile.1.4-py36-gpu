@@ -1,4 +1,4 @@
-FROM tinymind/base:py36-gpu-cuda101
+FROM tinymind/base:py37-gpu-cuda101
 LABEL author="TinyMind" website="www.tinymind.com" email="hello@tinymind.com"
 
 RUN pip install mxnet-cu101==1.4.1 &&     rm -rf ~/.cache/pip
