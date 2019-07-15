@@ -42,7 +42,7 @@ WHEELS = {
     '1.13-py36-gpu': 'tf1.13-gpu-cuda10-tensorrt/tensorflow-1.13.1-cp36-cp36m',
 
     '1.14-py36-cpu': 'tf1.14-cpu-mkl/tensorflow-1.14.0-cp36-cp36m',
-
+    '1.14-py36-gpu': '',
 }
 
 TEMPLATE = """FROM tinymind/base:{version}
