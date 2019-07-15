@@ -3,7 +3,7 @@ import argparse
 from shutil import copyfile
 
 
-VERSIONS = ['1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10', '1.11', '1.12', '1.13']
+VERSIONS = ['1.4', '1.5', '1.6', '1.7', '1.8', '1.9', '1.10', '1.11', '1.12', '1.13', '1.14']
 LANGS = ['py36']
 ARCHS = ['cpu', 'gpu']
 
@@ -40,6 +40,9 @@ WHEELS = {
 
     '1.13-py36-cpu': 'tf1.13-cpu-mkl/tensorflow-1.13.1-cp36-cp36m',
     '1.13-py36-gpu': 'tf1.13-gpu-cuda10-tensorrt/tensorflow-1.13.1-cp36-cp36m',
+
+    '1.14-py36-cpu': 'tf1.14-cpu-mkl/tensorflow-1.14.0-cp36-cp36m',
+
 }
 
 TEMPLATE = """FROM tinymind/base:{version}
