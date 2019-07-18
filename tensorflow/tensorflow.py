@@ -69,7 +69,9 @@ def create_file(v, l, a):
     with open(path, 'w+') as f:
         version = '{}-{}'.format(l, a)
         if a == 'gpu':
-            if v in ('1.10', '1.11', '1.12', '1.13'):
+            if v in ('1.14'):
+                version += '-cuda101'
+            elif v in ('1.10', '1.11', '1.12', '1.13'):
                 version += '-cuda10'
             else:
                 version += '-cuda91'
